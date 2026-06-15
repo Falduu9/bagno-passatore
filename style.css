@@ -606,3 +606,33 @@ body {
         justify-content: center;
     }
 }
+
+/* ============================================
+   RECENSIONI SECTION
+============================================= */
+#recensioni {
+    background-color: var(--light-bg);
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.fb-page {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Responsive per recensioni */
+@media (max-width: 768px) {
+    .reviews-container {
+        padding: 0 10px;
+    }
+
+    .fb-page {
+        width: 100% !important;
+    }
+}
