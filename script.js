@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnMenu) {
         btnMenu.addEventListener('click', () => {
             // In produzione qui apriresti un PDF o una modale
-            alert("🍽️ Menu del Bagno del Passatore\n\nIn questa versione demo, qui si aprirebbe il PDF del menu.\n\nI nostri piatti forti:\n- Spaghetti alle Vongole Veraci\n- Grigliata Mista Adriatica\n- Piadina Romagnola IGP\n- Pizze Farcite");
+            alert("🍽️ Menu del Bagno del Passatore\n");
         });
     }
 

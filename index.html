@@ -86,8 +86,7 @@
                             <li>☕ Colazioni dolci e salate</li>
                             <li>🍹 Aperitivi al tramonto</li>
                         </ul>
-                        <button class="btn btn-secondary" onclick="alert('Qui si aprirà il PDF del menù')">Sfoglia il
-                            Menù</button>
+                        <a href="menu.pdf" target="_blank" class="btn btn-secondary">Sfoglia il Menù</a>
                     </div>
                     <div class="image-block">
                         <img src="images/paitto-pesce.jpg" alt="Piatto di pesce fresco al Bagno del Passatore"
@@ -164,16 +163,16 @@
             <div class="footer-col">
                 <h3>Contatti</h3>
                 <ul class="contact-info">
-                    <li>📍 <a href="https://www.google.com/maps/dir//Viale+Matelda,+2,+48124+Lido+di+Dante+RA"target="_blank">Viale Matelda, 2, 48124<br>Lido di Dante (RA)</a></li>
+                    <li>📍 <a href="https://www.google.com/maps/dir//Viale+Matelda,+2,+48124+Lido+di+Dante+RA"
+                            target="_blank">Viale Matelda, 2, 48124<br>Lido di Dante (RA)</a></li>
                     <li>📞 <a href="tel:0544494432">0544 494432</a></li>
-                    <li>✉️ <a href="mailto:info@bagnodelpassatore.it">info@bagnodelpassatore.it</a></li>
+                    <li>✉️ <a href="mailto:bagnodelpassatore@gmail.com">bagnodelpassatore@gmail.comt</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
                 <h3>Orari</h3>
-                <p><strong>Ristorante:</strong><br>Pranzo: 12:30 - 14:30<br>Cena: 19:30 - 22:30</p>
-                <p><strong>Segreteria:</strong><br>08:30 - 13:00 / 15:00 - 19:00</p>
+                <p><strong>Ristorante:</strong><br>Pranzo: 12:00 - 14:30<br>Cena: 19:00 - 22:30</p>
             </div>
         </div>
 
@@ -184,6 +183,22 @@
 
     <!-- Script JS -->
     <script src="script.js"></script>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <p>🍪 Questo sito utilizza cookie tecnici per migliorare la tua esperienza di navigazione.
+                <a href="privacy.html" target="_blank">Leggi la Privacy Policy</a>
+            </p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" class="btn-cookie accept">Accetta</button>
+                <button id="reject-cookies" class="btn-cookie reject">Rifiuta</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Collega il file JavaScript del cookie banner -->
+    <script src="cookie-banner.js"></script>
 </body>
 
 </html>
