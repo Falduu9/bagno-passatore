@@ -1,33 +1,61 @@
-// Cookie Banner Semplice per Bagno del Passatore
+// Cookie Banner Modale Professionale
 document.addEventListener('DOMContentLoaded', function () {
-    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieOverlay = document.getElementById('cookie-overlay');
+    const cookieClose = document.getElementById('cookie-close');
     const acceptBtn = document.getElementById('accept-cookies');
     const rejectBtn = document.getElementById('reject-cookies');
+    const preferencesBtn = document.getElementById('cookie-preferences');
 
     // Controlla se l'utente ha già espresso una scelta
     if (!localStorage.getItem('cookieChoice')) {
-        // Mostra il banner dopo 1 secondo
+        // Mostra il modal dopo 500ms
         setTimeout(() => {
-            cookieBanner.classList.add('show');
-        }, 1000);
+            cookieOverlay.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Blocca scroll
+        }, 500);
+    }
+
+    // Funzione per chiudere
+    function closeCookieBanner(choice) {
+        localStorage.setItem('cookieChoice', choice);
+        cookieOverlay.classList.remove('show');
+        document.body.style.overflow = ''; // Riabilita scroll
     }
 
     // Pulsante Accetta
     if (acceptBtn) {
         acceptBtn.addEventListener('click', function () {
-            localStorage.setItem('cookieChoice', 'accepted');
-            cookieBanner.classList.remove('show');
-            // Qui puoi aggiungere il caricamento di analytics se vuoi
+            closeCookieBanner('accepted');
             console.log('Cookie accettati');
         });
     }
 
-    // Pulsante Rifiuta
+    // Pulsante Nega
     if (rejectBtn) {
         rejectBtn.addEventListener('click', function () {
-            localStorage.setItem('cookieChoice', 'rejected');
-            cookieBanner.classList.remove('show');
-            console.log('Cookie rifiutati');
+            closeCookieBanner('rejected');
+            console.log('Cookie negati');
         });
     }
+
+    // Pulsante Preferenze (per ora chiude, puoi espanderlo)
+    if (preferencesBtn) {
+        preferencesBtn.addEventListener('click', function () {
+            alert('Funzionalità preferenze in arrivo! Per ora puoi accettare o negare.');
+        });
+    }
+
+    // Pulsante X per chiudere (considerato come rifiuto)
+    if (cookieClose) {
+        cookieClose.addEventListener('click', function () {
+            closeCookieBanner('rejected');
+        });
+    }
+
+    // Click fuori dal modal chiude
+    cookieOverlay.addEventListener('click', function (e) {
+        if (e.target === cookieOverlay) {
+            closeCookieBanner('rejected');
+        }
+    });
 });
